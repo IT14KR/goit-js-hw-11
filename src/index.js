@@ -11,6 +11,7 @@ const refs = {
 };
 
 const searchApi = new SearchApi();
+
 refs.loadMoreBtn.classList.add('is-hidden');
 refs.formEl.addEventListener('submit', onFormSubmit);
 refs.loadMoreBtn.addEventListener('click', loadClickMoreBtn);
@@ -20,6 +21,7 @@ async function onFormSubmit(e) {
   searchApi.query = e.target.elements.searchQuery.value.trim();
 
   searchApi.resetPage();
+
   refs.listGallery.innerHTML = '';
 
   try {
