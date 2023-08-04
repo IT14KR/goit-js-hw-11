@@ -74,7 +74,7 @@ async function loadClickMoreBtn() {
     Notiflix.Notify.info(
       "We're sorry, but you've reached the end of search results."
     );
-    refs.loadMoreBtn.classList.remove('is-hidden');
+    refs.loadMoreBtn.classList.add('is-hidden');
   }
 }
 const lightBox = new SimpleLightbox('.gallery a', {
