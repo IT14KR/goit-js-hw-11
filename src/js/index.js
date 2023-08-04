@@ -68,10 +68,13 @@ async function loadClickMoreBtn() {
   const res = await searchApi.getApi();
   createCard(res);
 
-  if (searchApi.loadMore()) {
+  const lastPage = Math.ceil(res.totalHits / 40);
+
+  if (searchApi.page === lastPage) {
     Notiflix.Notify.info(
       "We're sorry, but you've reached the end of search results."
     );
+    refs.loadMoreBtn.classList.remove('is-hidden');
   }
 }
 const lightBox = new SimpleLightbox('.gallery a', {
