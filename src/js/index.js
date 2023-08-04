@@ -1,6 +1,6 @@
 import Notiflix from 'notiflix';
-import { SearchApi } from './pixabay-api';
-import { renderMarkup, setBtnLoad } from './render-markup';
+import { SearchApi } from '../js/pixabay-api';
+import { renderMarkup, setBtnLoad } from '../js/render-markup';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
@@ -41,7 +41,7 @@ async function onFormSubmit(e) {
       createCard(res);
 
       if (searchApi.loadMore()) {
-        refs.searchBtn.classList.add('is-hidden');
+        refs.loadMoreBtn.classList.add('is-hidden');
         Notiflix.Notify.info(
           "We're sorry, but you've reached the end of search results."
         );
